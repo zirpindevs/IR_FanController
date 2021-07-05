@@ -16,7 +16,7 @@ try:
         # if read.find("Encendido"):
         #     print("ok")
         read_new = str(read)
-        print("new", read_new)
+        print("new", read_new[2:])
         if(read_new.find("cendido")):
             print("enciende")
         elif(read_new.find("pagado")):
