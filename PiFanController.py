@@ -15,7 +15,7 @@ try:
         print("read", read)
         # if read.find("Encendido"):
         #     print("ok")
-
+        print(read[:4])
 
 except KeyboardInterrupt:
     print("\nInterrupcion por teclado")
