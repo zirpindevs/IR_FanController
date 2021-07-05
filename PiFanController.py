@@ -15,7 +15,8 @@ try:
         print("read", read)
         # if read.find("Encendido"):
         #     print("ok")
-        if(read.find("dido")):
+        read_new = str(read)
+        if(read_new.find("dido")):
             print("encen")
 
 except KeyboardInterrupt:
