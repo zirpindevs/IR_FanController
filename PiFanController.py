@@ -15,7 +15,7 @@ try:
         print("read", read)
         # if read.find("Encendido"):
         #     print("ok")
-        print("a", read[:4])
+        print("a", read[2:2])
         if(read == "Encendido"):
             print("encen")
 
