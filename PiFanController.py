@@ -16,9 +16,9 @@ try:
         # if read.find("Encendido"):
         #     print("ok")
         read_new = str(read)
-        if(read_new.find("Encendido")):
+        if(read_new.find("cendido")):
             print("enciende")
-        elif(read_new.find("Apagado")):
+        elif(read_new.find("pagado")):
             print("apaga")
 
 except KeyboardInterrupt:
