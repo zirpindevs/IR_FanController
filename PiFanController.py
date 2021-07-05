@@ -11,8 +11,8 @@ try:
         comandoBytes = comando.encode()
         ser.write(comandoBytes)
         time.sleep(0.1)
-        read = ser.readline()
-        print("read",read)
+        #read = ser.readline()
+        #print("read", read)
         # if read.find("Encendido"):
         #     print("ok")
 
