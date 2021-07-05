@@ -10,13 +10,13 @@ try:
         comando = comando + "\n"
         comandoBytes = comando.encode()
         ser.write(comandoBytes)
-        time.sleep(0.1)
+        time.sleep(0.5)
         read = ser.readline()
         print("read", read)
         # if read.find("Encendido"):
         #     print("ok")
         read_new = str(read)
-        print("new", read_new[2:2])
+        print("new", read_new)
         if(read_new.find("cendido")):
             print("enciende")
         elif(read_new.find("pagado")):
