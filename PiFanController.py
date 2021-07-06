@@ -17,10 +17,17 @@ try:
         #     print("ok")
         read_new = str(read)
         print("new", read_new)
-        if(read_new.find("cendido")):
-            print("enciende")
-        elif(read_new.find("pagado")):
-            print("apaga")
+
+        name1 = 'Python is good'
+        name2 = 'Python is good'
+        if name1 == name2:
+            print(name1, 'is equal to', name2)
+
+
+        # if(read_new.find("cendido")):
+        #     print("enciende")
+        # elif(read_new.find("pagado")):
+        #     print("apaga")
 
 except KeyboardInterrupt:
     print("\nInterrupcion por teclado")
