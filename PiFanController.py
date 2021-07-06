@@ -35,7 +35,9 @@ try:
         read_new = str(read)
         print("new", read_new)
 
+        print("encendido")
         print(compare_strings("read_new", "Encendido"))
+        print("apagado")
         print(compare_strings("read_new", "Apagado"))
 
 
