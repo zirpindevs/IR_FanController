@@ -4,6 +4,23 @@ import serial
 
 ser = serial.Serial("/dev/ttyACM0", baudrate=9600) #Modificar el puerto serie de ser necesario
 
+
+# function to compare string
+# based on the number of digits
+def compare_strings(str1, str2):
+    count1 = 0
+    count2 = 0
+
+    for i in range(len(str1)):
+        if str1[i] >= "0" and str1[i] <= "9":
+            count1 += 1
+
+    for i in range(len(str2)):
+        if str2[i] >= "0" and str2[i] <= "9":
+            count2 += 1
+
+    return count1 == count2
+
 try:
     while True:
         comando = input("Ingresar comando (on/off): ")
@@ -18,10 +35,7 @@ try:
         read_new = str(read)
         print("new", read_new)
 
-        name1 = 'Python is good'
-        name2 = 'Python is good'
-        if name1 == name2:
-            print(name1, 'is equal to', name2)
+        print(compare_strings("read_new", "read"))
 
 
         # if(read_new.find("cendido")):
