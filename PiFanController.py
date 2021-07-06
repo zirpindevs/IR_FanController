@@ -35,7 +35,9 @@ try:
         read_new = str(read)
         print("new", read_new)
 
-        print(compare_strings("read_new", "read"))
+        print(compare_strings("read_new", "Encendido"))
+        print(compare_strings("read_new", "Apagado"))
+
 
 
         # if(read_new.find("cendido")):
