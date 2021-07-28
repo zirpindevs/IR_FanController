@@ -1,7 +1,7 @@
 import os
 import time
 
-os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino')
+os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_OFF/FanController_OFF.ino')
 
 time.sleep(2) #segundos
 
