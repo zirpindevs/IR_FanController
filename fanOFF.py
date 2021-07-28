@@ -1,5 +1,5 @@
 import os
-from datetime import time
+import time
 
 os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino')
 

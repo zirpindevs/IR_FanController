@@ -1,7 +1,7 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
 import os
-from datetime import time
+import time
 
 os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_ON.ino')
 
