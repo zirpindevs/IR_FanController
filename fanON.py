@@ -3,9 +3,9 @@
 import os
 import time
 
-os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_ON.ino')
+os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_ON/FanController_ON.ino')
 
-time.sleep(2) #segundos
+time.sleep(5) #segundos
 
 os.system('arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno FanController_ON')
 
