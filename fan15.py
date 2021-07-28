@@ -8,3 +8,5 @@ os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_15Min/FanCon
 time.sleep(1) #segundos
 
 os.system('arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno FanController_15Min')
+
+print("fan set to 15MIN")
