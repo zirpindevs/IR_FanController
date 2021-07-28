@@ -7,9 +7,9 @@
  */
 #include <IRLibSendBase.h>    //We need the base code
 #include <IRLib_HashRaw.h>    //Only use raw sender
-#include <dht.h>
 
 
+IRsendRaw mySender;
 
 
 void setup() {
