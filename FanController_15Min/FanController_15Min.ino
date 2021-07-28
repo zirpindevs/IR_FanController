@@ -66,8 +66,7 @@ uint16_t rawDataOn[RAW_DATA_LEN_ON]={
   334, 1358, 330, 1358, 334, 1354, 334, 1354, 
   334, 1354, 334, 1354, 334, 1354, 1178, 1000};
 
-  900000
-   
+
 void loop() {
 
   int static status_vent = 0; //shutdown by default
