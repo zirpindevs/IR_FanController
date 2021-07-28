@@ -76,12 +76,12 @@ void loop() {
   if (status_vent == 0) {
     mySender.send(rawDataOn,RAW_DATA_LEN_ON,36);//Pass the buffer,length, optionally frequency
     Serial.println(F("FAN Switched On"));
-    status_vent = 1; //Mark vent as on    
-      
+
   delay(CHECK_TIME_5);
   
     mySender.send(rawDataOff,RAW_DATA_LEN_OFF,36);//Pass the buffer,length, optionally frequency
     Serial.println(F("FAN Switched Off"));
+
     status_vent = 1; //Mark vent as off
   }
 
