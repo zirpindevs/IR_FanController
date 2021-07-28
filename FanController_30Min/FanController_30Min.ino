@@ -77,7 +77,7 @@ void loop() {
     mySender.send(rawDataOn,RAW_DATA_LEN_ON,36);//Pass the buffer,length, optionally frequency
     Serial.println(F("FAN Switched On"));
 
-  delay(CHECK_TIME_5);
+  delay(CHECK_TIME_30);
   
     mySender.send(rawDataOff,RAW_DATA_LEN_OFF,36);//Pass the buffer,length, optionally frequency
     Serial.println(F("FAN Switched Off"));
