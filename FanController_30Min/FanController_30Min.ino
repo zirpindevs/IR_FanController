@@ -9,12 +9,8 @@
 #include <IRLib_HashRaw.h>    //Only use raw sender
 #include <dht.h>
 
-//set dht 22 pin
-const int dataPin = 8; 
 
-dht DHT;
 
-IRsendRaw mySender;
 
 void setup() {
   Serial.begin(9600);
@@ -22,13 +18,9 @@ void setup() {
   while (!Serial); //delay for Leonardo
 }
 
-//Consts to set  MAX and MIN temperature
-#define TEMP_MAX 31
-#define TEMP_MIN 30
+//Consts to set TIME
 #define CHECK_TIME_5 300000  // 5 minutes
 #define CHECK_TIME_30 1800000 //30 minutes
-
-
 
 #define RAW_DATA_LEN_OFF 146
 #define RAW_DATA_LEN_ON 144
@@ -79,10 +71,7 @@ uint16_t rawDataOn[RAW_DATA_LEN_ON]={
    
 void loop() {
 
-  int readData = DHT.read22(dataPin); 
-  float temp = DHT.temperature + 2;  // Add two extra degrees for sync to my room temperature tester
   int static status_vent = 0; //shutdown by default
-
     
   if (status_vent == 0) {
     mySender.send(rawDataOn,RAW_DATA_LEN_ON,36);//Pass the buffer,length, optionally frequency
