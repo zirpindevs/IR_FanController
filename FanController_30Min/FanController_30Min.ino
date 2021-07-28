@@ -72,7 +72,7 @@ uint16_t rawDataOn[RAW_DATA_LEN_ON]={
 void loop() {
 
   int static status_vent = 0; //shutdown by default
-    
+
   if (status_vent == 0) {
     mySender.send(rawDataOn,RAW_DATA_LEN_ON,36);//Pass the buffer,length, optionally frequency
     Serial.println(F("FAN Switched On"));
