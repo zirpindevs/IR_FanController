@@ -6,6 +6,7 @@ import json
 
 api_key = "o.fUycrvSsqihUVsNCgj0MWDOwIxitAKLb"
 
+
 def pushbullet(cfg, msg):
     try:
         data_send = {"type": "note", "title": "FANbot", "body": msg}
@@ -17,15 +18,17 @@ def pushbullet(cfg, msg):
     except (KeyboardInterrupt, SystemExit):
         raise
 
-os.system('/home/pi/bin/arduino-cli compile --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_OFF/FanController_OFF.ino')
 
-time.sleep(1) #segundos
+def main():
+    os.system('/home/pi/bin/arduino-cli compile --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_OFF/FanController_OFF.ino')
 
-os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_OFF')
+    time.sleep(1) #segundos
 
-print("fan off")
+    os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_OFF')
 
-pushbullet(api_key, "FAN| OFF ")
+    print("fan off")
+
+    pushbullet(api_key, "FAN| OFF ")
 
 # arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino
 

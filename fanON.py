@@ -9,6 +9,7 @@ import json
 # Pusshbullet api key
 api_key = "o.fUycrvSsqihUVsNCgj0MWDOwIxitAKLb"
 
+
 def pushbullet(cfg, msg):
     try:
         data_send = {"type": "note", "title": "FANbot", "body": msg}
@@ -21,14 +22,16 @@ def pushbullet(cfg, msg):
         raise
 
 
-os.system('/home/pi/bin/arduino-cli compile --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_ON/FanController_ON.ino')
-time.sleep(1) #segundos
+def main():
+    os.system('/home/pi/bin/arduino-cli compile --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_ON/FanController_ON.ino')
 
-os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_ON')
+    time.sleep(1) #segundos
 
-pushbullet(api_key, "FAN| ON ")
+    os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_ON')
 
-print("fan on")
+    pushbullet(api_key, "FAN| ON ")
+
+    print("fan on")
 
 # arduino-cli compile --fqbn arduino:avr:uno FanController_ON.ino
 
