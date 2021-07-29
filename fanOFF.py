@@ -20,15 +20,16 @@ def set_status_fan(status):
     db = MySQLdb.connect(host, username, password, db_fan)
     # setup cursor
     cursor = db.cursor()
+    
+    print(db)
+    print(cursor)
     try:
-        cursor.execute(
-            """INSERT INTO status_fan (estado) VALUES (%s)""",
-            status)
+        cursor.execute("""INSERT INTO status_fan (estado) VALUES (%s)""", status)
         db.commit()
         print("insert OK")
     except:
         db.rollback()
-        print("error inserting status gpio")
+        print("error inserting status fan")
 
 
 def pushbullet(msg):
