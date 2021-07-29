@@ -26,11 +26,11 @@ def pushbullet(msg):
 
 
 def main():
-   # os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_30Min/FanController_30Min.ino')
+   # os.system('/home/pi/bin/arduino-cli compile --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_30Min/FanController_30Min.ino')
 
     #time.sleep(1) #segundos
 
-    os.system('arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno FanController_30Min')
+    os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_30Min')
 
     print("fan set to 30MIN")
 
