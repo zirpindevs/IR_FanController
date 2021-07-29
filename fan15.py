@@ -38,5 +38,6 @@ def main():
 
     pushbullet("FAN| APAGADO 15MIN ")
 
+
 if __name__ == '__main__':
     main()
