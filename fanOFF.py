@@ -95,7 +95,7 @@ def main():
     #
     # set_status_fan("APAGADO")
 
-    get_status_fan()
+    print(get_status_fan())
 
 
 # arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino
