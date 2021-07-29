@@ -16,6 +16,11 @@ def set_status_fan(status):
     password = config['default']['password']
     db_fan = config['default']['db_fan']
 
+    print(host)
+    print(username)
+    print(password)
+    print(db_fan)
+
     # connect to db
     db = MySQLdb.connect(host, username, password, db_fan)
     # setup cursor
