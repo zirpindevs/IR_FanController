@@ -7,7 +7,8 @@ import json
 
 
 # Function insert luz and vent , alarma and calentador status to table
-def set_status_fan(status):
+def set_status_fan():
+    status = "test"
     config = configparser.ConfigParser()
     config.read('/home/pi/config.ini')
 
@@ -24,10 +25,7 @@ def set_status_fan(status):
     cursor = db.cursor()
 
     # try:
-    sql = "INSERT INTO `status_fan` (`estado`) VALUES (%s)"
-    # cursor.execute("""INSERT INTO `status_fan` (`estado`) VALUES (%s)""", status)
-    cursor.execute(sql, status)
-
+    cursor.execute("""INSERT INTO `status_fan` (`estado`) VALUES (%s)""", status)
     db.commit()
 
     #     print("insert OK")
