@@ -34,6 +34,9 @@ def main():
 
     pushbullet("FAN| 15MIN ")
 
+    time.sleep(900)  # segundos
+
+    pushbullet("FAN| APAGADO 15MIN ")
 
 if __name__ == '__main__':
     main()
