@@ -20,7 +20,7 @@ def set_status_fan(status):
     db = MySQLdb.connect(host, username, password, db_fan)
     # setup cursor
     cursor = db.cursor()
-    
+
     print(db)
     print(cursor)
     try:
