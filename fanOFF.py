@@ -33,3 +33,7 @@ def main():
 # arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino
 
 # arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno FanController_OFF
+
+
+if __name__ == '__main__':
+    main()
