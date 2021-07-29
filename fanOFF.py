@@ -24,7 +24,10 @@ def set_status_fan(status):
     cursor = db.cursor()
 
     # try:
-    cursor.execute("""INSERT INTO `status_fan` (`estado`) VALUES (%s)""", status)
+    sql = "INSERT INTO `status_fan` (`estado`) VALUES (%s)"
+    # cursor.execute("""INSERT INTO `status_fan` (`estado`) VALUES (%s)""", status)
+    cursor.execute(sql, status)
+
     db.commit()
 
     #     print("insert OK")
