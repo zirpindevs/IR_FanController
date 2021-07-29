@@ -18,7 +18,7 @@ def set_status_fan(status):
 
     # connect to db
     # db = MySQLdb.connect(host, username, password, db_fan)
-    db = MySQLdb.connect("localhost", "zirpinLocal", "zirpin100", "fandb")
+    db = MySQLdb.connect("192.168.1.47", "zirpinLocal", "zirpin100", "fandb")
 
     # setup cursor
     cursor = db.cursor()
