@@ -31,3 +31,7 @@ def main():
     print("fan set to 30MIN")
 
     pushbullet(api_key, "FAN| 30MIN ")
+
+
+if __name__ == '__main__':
+    main()
