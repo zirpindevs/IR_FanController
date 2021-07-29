@@ -2,7 +2,7 @@
 # -*- coding: utf-8 -*-
 import os
 import time
-import pymysql
+import MySQLdb
 import requests
 import json
 
