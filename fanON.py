@@ -1,16 +1,17 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import configparser
 import os
 import time
-import MySQLdb
 import requests
 import json
 
-# Pusshbullet api key
-api_key = "o.fUycrvSsqihUVsNCgj0MWDOwIxitAKLb"
 
+def pushbullet(msg):
+    config = configparser.ConfigParser()
+    config.read('/home/pi/config.ini')
+    cfg = config['default']['api_key']
 
-def pushbullet(cfg, msg):
     try:
         data_send = {"type": "note", "title": "FANbot", "body": msg}
         requests.post(
@@ -29,7 +30,7 @@ def main():
 
     os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_ON')
 
-    pushbullet(api_key, "FAN| ON ")
+    pushbullet("FAN| ON ")
 
     print("fan on")
 

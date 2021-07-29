@@ -3,16 +3,15 @@
 import configparser
 import os
 import time
-import MySQLdb
 import requests
 import json
 
 
-config = configparser.ConfigParser()
+def pushbullet(msg):
+    config = configparser.ConfigParser()
+    config.read('/home/pi/config.ini')
+    cfg = config['default']['api_key']
 
-
-
-def pushbullet(cfg, msg):
     try:
         data_send = {"type": "note", "title": "FANbot", "body": msg}
         requests.post(
@@ -25,15 +24,15 @@ def pushbullet(cfg, msg):
 
 
 def main():
-    os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_15Min/FanController_15Min.ino')
+   # os.system('arduino-cli compile --fqbn arduino:avr:uno FanController_15Min/FanController_15Min.ino')
 
-    time.sleep(1) #segundos
+    #time.sleep(1) #segundos
 
     os.system('arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno FanController_15Min')
 
     print("fan set to 15MIN")
 
-    pushbullet(api_key, "FAN| 15MIN ")
+    pushbullet("FAN| 15MIN ")
 
 
 if __name__ == '__main__':
