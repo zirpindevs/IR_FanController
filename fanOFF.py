@@ -22,7 +22,7 @@ def set_status_fan(status):
     cursor = db.cursor()
 
     try:
-        cursor.execute("""INSERT INTO status_fan (estado) VALUES (%s)""", status)
+        cursor.execute("""INSERT INTO `status_fan` (estado) VALUES (%s)""", status)
         db.commit()
 
         print("insert OK")
@@ -87,13 +87,13 @@ def main():
 
     #time.sleep(1)  # segundos
 
-    os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_OFF')
+    #os.system('/home/pi/bin/arduino-cli upload -p /dev/ttyACM0 --fqbn arduino:avr:uno /home/pi/IR_FanController/FanController_OFF')
 
     print("fan off")
 
     # pushbullet("FAN| OFF ")
     #
-    # set_status_fan("APAGADO")
+    set_status_fan("APAGADO")
 
     print(get_status_fan())
 

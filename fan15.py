@@ -1,12 +1,15 @@
 #!/usr/bin/python
 # -*- coding: utf-8 -*-
+import configparser
 import os
 import time
 import MySQLdb
 import requests
 import json
 
-api_key = "o.fUycrvSsqihUVsNCgj0MWDOwIxitAKLb"
+
+config = configparser.ConfigParser()
+
 
 
 def pushbullet(cfg, msg):
