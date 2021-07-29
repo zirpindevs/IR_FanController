@@ -8,7 +8,7 @@ import json
 
 # Function insert luz and vent , alarma and calentador status to table
 def set_status_fan():
-    status = "test"
+    status = 11
     config = configparser.ConfigParser()
     config.read('/home/pi/config.ini')
 
