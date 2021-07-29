@@ -96,7 +96,7 @@ def main():
 
     # pushbullet("FAN| OFF ")
     #
-    set_status_fan("APAGADO")
+    set_status_fan()
 
     print(get_status_fan())
 
