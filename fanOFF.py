@@ -16,24 +16,54 @@ def set_status_fan(status):
     password = config['default']['password']
     db_fan = config['default']['db_fan']
 
-    print(host)
-    print(username)
-    print(password)
-    print(db_fan)
-
     # connect to db
     db = MySQLdb.connect(host, username, password, db_fan)
     # setup cursor
     cursor = db.cursor()
 
-    # try:
-    #     cursor.execute("""INSERT INTO status_fan (estado) VALUES (%s)""", status)
-    #     db.commit()
-    #
-    #     print("insert OK")
-    # except:
-    #     db.rollback()
-    #     print("error inserting status fan")
+    try:
+        cursor.execute("""INSERT INTO status_fan (estado) VALUES (%s)""", status)
+        db.commit()
+
+        print("insert OK")
+    except:
+        db.rollback()
+        print("error inserting status fan")
+
+
+def get_status_fan():
+
+    config = configparser.ConfigParser()
+    config.read('/home/pi/config.ini')
+
+    host = config['default']['host']
+    username = config['default']['username']
+    password = config['default']['password']
+    db_fan = config['default']['db_fan']
+
+    # Open database connection
+    db = MySQLdb.connect(host, username, password, db_fan)
+
+    sql = "SELECT * FROM `status_fan`ORDER BY fecha DESC LIMIT 1"
+
+    # prepare a cursor object using cursor() method
+    cursor = db.cursor()
+
+    status_fan = []
+
+    try:
+        # Execute the SQL command
+        cursor.execute(sql)
+        # Fetch all the rows in a list of lists.
+        results = cursor.fetchall()
+
+        if results:
+            for row in results:
+                status_fan = row[1]
+    except:
+        print ("Error: unable to fecth data fan status")
+
+    return status_fan
 
 
 def pushbullet(msg):
@@ -61,9 +91,11 @@ def main():
 
     print("fan off")
 
-    pushbullet("FAN| OFF ")
+    # pushbullet("FAN| OFF ")
+    #
+    # set_status_fan("APAGADO")
 
-    set_status_fan("APAGADO")
+    get_status_fan()
 
 
 # arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino
