@@ -21,11 +21,10 @@ def set_status_fan(status):
     # setup cursor
     cursor = db.cursor()
 
-    print(db)
-    print(cursor)
     try:
         cursor.execute("""INSERT INTO status_fan (estado) VALUES (%s)""", status)
         db.commit()
+
         print("insert OK")
     except:
         db.rollback()
