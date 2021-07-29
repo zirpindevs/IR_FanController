@@ -17,18 +17,20 @@ def set_status_fan(status):
     db_fan = config['default']['db_fan']
 
     # connect to db
-    db = MySQLdb.connect(host, username, password, db_fan)
+    # db = MySQLdb.connect(host, username, password, db_fan)
+    db = MySQLdb.connect("localhost", "zirpinLocal", "zirpin100", "fandb")
+
     # setup cursor
     cursor = db.cursor()
 
-    try:
-        cursor.execute("""INSERT INTO `status_fan` (`estado`) VALUES (%s)""", status)
-        db.commit()
+    # try:
+    cursor.execute("""INSERT INTO `status_fan` (`estado`) VALUES (%s)""", status)
+    db.commit()
 
-        print("insert OK")
-    except:
-        db.rollback()
-        print("error inserting status fan")
+    #     print("insert OK")
+    # except:
+    #     db.rollback()
+    #     print("error inserting status fan")
 
 
 def get_status_fan():
