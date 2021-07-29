@@ -60,6 +60,8 @@ def main():
 
     pushbullet("FAN| OFF ")
 
+    set_status_fan("APAGADO")
+
 
 # arduino-cli compile --fqbn arduino:avr:uno FanController_OFF.ino
 
